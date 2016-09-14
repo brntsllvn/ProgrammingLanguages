@@ -17,25 +17,25 @@ fun prev_month((year : int, month : int, day : int)) =
 fun next_month((year : int, month : int, day : int)) =
   if month = 12 then (year + 1, 1, day)
   else (year, month + 1, day);
-  		      
-fun number_in_month(date_list : (int * int * int) list, monthNumber : int) =
+
+fun date_is_in_month(year : int, month : int, day : int, month_number : int) =
+      is_older(
+	  (year, month, day),
+	  (next_month(year, month_number, 1)))
+      andalso is_older(
+	  (prev_month(year, month_number, 31)),
+	  (year, month, day))
+	  
+fun number_in_month(date_list : (int * int * int) list, month_number : int) =
   if null date_list then 0		     
-  else
-      let
-	  val year  = #1 (hd date_list)
-	  val month = #2 (hd date_list)
-	  val day   = #3 (hd date_list)
-      in
-	  if is_older(
-		  (year, month, day),
-		  (next_month(year, monthNumber, 1)))
-	     andalso is_older(
-		 (prev_month(year, monthNumber, 31)),
-		 (year, month, day))
-	  then 1 + number_in_month(tl date_list, monthNumber)
-	  else 0 + number_in_month(tl date_list, monthNumber)
-      end
+  else if date_is_in_month(#1 (hd date_list), #2 (hd date_list), #3 (hd date_list), month_number) 
+  then 1 + number_in_month(tl date_list, month_number)
+  else 0 + number_in_month(tl date_list, month_number)
 
 fun number_in_months(date_list : (int * int * int) list, month_list : int list) =
   if null month_list then 0
-  else number_in_month(date_list, hd month_list) + number_in_months(date_list, tl month_list)
+  else number_in_month(date_list, hd month_list) + number_in_months(date_list, tl month_list);
+
+fun dates_in_month(date_list : (int * int * int) list, month_number : int) =
+  if null date_list then []
+  else [(1999,12,31)];
