@@ -16,4 +16,18 @@ fun is_older((year1 : int, month1 : int, day1 : int),(year2 : int, month2 : int,
 	  then true
 	  else (* day1 = day2 *)
 	      false;
-      
+
+fun find_month(number : int) =
+  if number = 13 then 1
+  else if number = 0 then 12
+  else number;
+		      
+fun number_in_month([(year : int, month : int, day : int)], monthNumber : int) =
+  if is_older(
+	  (year, month, day),
+	  (year, find_month(monthNumber + 1), 1))
+     andalso is_older(
+	 (year, find_month(monthNumber - 1), 31),
+	 (year, month, day))
+  then 1
+  else 0;
