@@ -23,7 +23,8 @@ fun find_month(number : int) =
   else number;
 		      
 fun number_in_month([(year : int, month : int, day : int)], monthNumber : int) =
-  if is_older(
+  raise NilExcep if monthNumber is nil;
+		    if is_older(
 	  (year, month, day),
 	  (year, find_month(monthNumber + 1), 1))
      andalso is_older(

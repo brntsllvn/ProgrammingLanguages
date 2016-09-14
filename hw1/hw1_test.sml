@@ -1,8 +1,14 @@
 use "hw1.sml";
 
+(* one date *)
 val q2test1 = number_in_month([(1995,2,1)],2) = 1;
 val q2test2 = number_in_month([(1995,1,31)],2) = 0;
 val q2test3 = number_in_month([(1995,3,1)],2) = 0;
+(* two dates *)
+val q2test4 = number_in_month([(1995,2,1) ,(1999,2,1)],2) = 2;
+val q2test5 = number_in_month([(1995,1,31),(1999,3,1)],2) = 0;
+val q2test6 = number_in_month([(1995,2,1) ,(1999,3,1)],2) = 1;
+
 
 val find_month_test1 = find_month(1) = 1;
 val find_month_test2 = find_month(0) = 12;
