@@ -38,4 +38,10 @@ fun number_in_months(date_list : (int * int * int) list, month_list : int list) 
 
 fun dates_in_month(date_list : (int * int * int) list, month_number : int) =
   if null date_list then []
-  else [(1999,12,31)];
+  else if date_is_in_month(#1 (hd date_list), #2 (hd date_list), #3 (hd date_list), month_number)
+  then hd date_list::dates_in_month(tl date_list, month_number)
+  else dates_in_month(tl date_list, month_number);
+
+fun dates_in_months(date_list : (int * int * int) list, month_list : int list) =
+  if null month_list then []
+  else dates_in_month(date_list, hd month_list) @ dates_in_months(date_list, tl month_list);
