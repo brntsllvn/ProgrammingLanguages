@@ -67,7 +67,14 @@ fun date_to_string(year_no : int, month_no : int, day_no : int) =
       val day   = Int.toString day_no;
   in
       month ^ " " ^ day ^ ", " ^ year
-  end
+  end;
+
+fun number_before_reaching_sum(sum : int, int_list : int list) =
+  if null int_list then 0
+  else if sum - (hd int_list) > 0 then 1 + number_before_reaching_sum(sum - (hd int_list),tl int_list)	  
+  else 0
+      
+      
       
   
 

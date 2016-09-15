@@ -100,3 +100,16 @@ val h7_12 = find_month(12) = "December";
 val q7_1 = date_to_string(1999, 1, 23) = "January 23, 1999";
 val q7_2 = date_to_string(2016, 7, 3) = "July 3, 2016";
 val test7 = date_to_string (2013, 6, 1) = "June 1, 2013"
+
+(*******************************************************************)
+(*******************************************************************)
+val q8 = "********** q8 **********";
+
+(* sum is positive *)
+(* list has all positive ints *)
+(* list always totals greater than sum *)
+val q8_1 = number_before_reaching_sum(1,[]) = 0;
+val q8_2 = number_before_reaching_sum(4,[2]) = 1;
+val q8_3 = number_before_reaching_sum(4,[1,2]) = 2;
+val q8_3 = number_before_reaching_sum(4,[1,2,3]) = 2;
+val q8_4 = number_before_reaching_sum(4,[5]) = 0;
