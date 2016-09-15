@@ -113,3 +113,32 @@ val q8_2 = number_before_reaching_sum(4,[2]) = 1;
 val q8_3 = number_before_reaching_sum(4,[1,2]) = 2;
 val q8_3 = number_before_reaching_sum(4,[1,2,3]) = 2;
 val q8_4 = number_before_reaching_sum(4,[5]) = 0;
+
+(*******************************************************************)
+(*******************************************************************)
+val q9 = "********** q9 **********";
+
+val q9_1  = what_month(1)   = 1;
+val q9_2  = what_month(31)  = 1;
+val q9_3  = what_month(32)  = 2;
+val q9_4  = what_month(59)  = 2;
+val q9_4  = what_month(60)  = 3;
+val q9_5  = what_month(90)  = 3;
+val q9_6  = what_month(91)  = 4;
+val q9_7  = what_month(120) = 4;
+val q9_8  = what_month(121) = 5;
+val q9_9  = what_month(151) = 5;
+val q9_10 = what_month(152) = 6;
+val q9_11 = what_month(181) = 6;
+val q9_12 = what_month(182) = 7;
+val q9_13 = what_month(212) = 7;
+val q9_14 = what_month(213) = 8;
+val q9_15 = what_month(243) = 8;
+val q9_16 = what_month(244) = 9;
+val q9_17 = what_month(273) = 9;
+val q9_18 = what_month(274) = 10;
+val q9_19 = what_month(304) = 10;
+val q9_20 = what_month(305) = 11;
+val q9_21 = what_month(334) = 11;
+val q9_22 = what_month(335) = 12;
+val q9_23 = what_month(365) = 12;

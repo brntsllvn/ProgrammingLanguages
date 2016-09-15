@@ -74,7 +74,20 @@ fun number_before_reaching_sum(sum : int, int_list : int list) =
   else if sum - (hd int_list) > 0 then 1 + number_before_reaching_sum(sum - (hd int_list),tl int_list)	  
   else 0
       
-      
+fun what_month(day_of_year : int) =
+  if      day_of_year >= 1   andalso day_of_year <= 31  then 1
+  else if day_of_year >= 32  andalso day_of_year <= 59  then 2
+  else if day_of_year >= 60  andalso day_of_year <= 90  then 3
+  else if day_of_year >= 91  andalso day_of_year <= 120 then 4
+  else if day_of_year >= 121 andalso day_of_year <= 151 then 5
+  else if day_of_year >= 152 andalso day_of_year <= 181 then 6
+  else if day_of_year >= 182 andalso day_of_year <= 212 then 7
+  else if day_of_year >= 213 andalso day_of_year <= 243 then 8
+  else if day_of_year >= 244 andalso day_of_year <= 273 then 9
+  else if day_of_year >= 274 andalso day_of_year <= 304 then 10
+  else if day_of_year >= 305 andalso day_of_year <= 334 then 11
+  else if day_of_year >= 335 andalso day_of_year <= 365 then 12
+  else 0
       
   
 
