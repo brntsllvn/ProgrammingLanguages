@@ -87,7 +87,12 @@ fun what_month(day_of_year : int) =
   else if day_of_year >= 274 andalso day_of_year <= 304 then 10
   else if day_of_year >= 305 andalso day_of_year <= 334 then 11
   else if day_of_year >= 335 andalso day_of_year <= 365 then 12
-  else 0
+  else 0;
+
+fun month_range(day1 : int, day2 : int) =
+  if day1 > day2 then []
+  else if day1 <> day2 then what_month day1 :: month_range(day1 + 1, day2)
+  else [what_month day1];
       
   
 
