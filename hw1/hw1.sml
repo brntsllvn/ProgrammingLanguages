@@ -93,7 +93,15 @@ fun month_range(day1 : int, day2 : int) =
   if day1 > day2 then []
   else if day1 <> day2 then what_month day1 :: month_range(day1 + 1, day2)
   else [what_month day1];
-      
-  
 
-  
+fun oldest(date_list : (int*int*int) list) =
+  if null date_list then NONE
+  else
+      if null(tl date_list) then SOME (hd date_list)
+      else if null(tl(tl date_list)) then 
+	  if is_older(hd date_list, hd(tl date_list)) then SOME (hd date_list)
+	  else SOME (hd(tl date_list))
+      else 
+	  if is_older(hd date_list, hd(tl date_list))
+	  then oldest([(hd date_list)] @ tl(tl date_list))
+	  else oldest(([(hd(tl date_list))] @ (tl(tl date_list))))
